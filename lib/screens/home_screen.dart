@@ -9,22 +9,23 @@ class HomeScreen extends StatelessWidget {
   int idActivateScreen;
   Widget activateScreen;
 
+  List<String> listOfTips = [
+    'I go where the blue goes...',
+    'I go where the orange goes...'
+  ];
+
   @override
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.abc)),
-          const SizedBox(
-            width: 48,
-          ),
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.access_alarm_sharp)),
+              onPressed: () {}, icon: const Icon(Icons.tips_and_updates)),
           const SizedBox(
             width: 48,
           ),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.data_array)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.timer))
         ],
       ),
       body: Center(
