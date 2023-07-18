@@ -3,6 +3,7 @@ import 'package:tap_the_button/models/phase.dart';
 import 'package:tap_the_button/screens/home_screen.dart';
 import 'package:tap_the_button/screens/phases/phase1_screen.dart';
 import 'package:tap_the_button/screens/phases/phase2_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ChoiceScreen extends StatelessWidget {
   ChoiceScreen({super.key});
@@ -12,6 +13,15 @@ class ChoiceScreen extends StatelessWidget {
   @override
   Widget build(context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            'Phases',
+            style: GoogleFonts.knewave(fontSize: 32),
+          ),
+        ),
+        backgroundColor: Colors.deepOrange,
+      ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) => Card(
@@ -20,14 +30,15 @@ class ChoiceScreen extends StatelessWidget {
             padding: const EdgeInsets.all(9.0),
             child: ListTile(
               leading: Text(
-                'Phase ${index + 1}',
-                style: const TextStyle(
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
+                '${index + 1}',
+                style: GoogleFonts.knewave(
+                  fontSize: 30,
                 ),
               ),
               trailing: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                  ),
                   onPressed: () {
                     Navigator.push(
                         context,
