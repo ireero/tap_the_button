@@ -4,6 +4,7 @@ import 'screens/phases/phase1_screen.dart';
 
 void main() {
   runApp(MaterialApp(
+    theme: ThemeData().copyWith(useMaterial3: true),
     debugShowCheckedModeBanner: false,
     home: ChoiceScreen(),
   ));

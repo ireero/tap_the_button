@@ -45,7 +45,9 @@ class _FirstScreenState extends State<FirstScreen> {
   void proximaTela() {
     setState(() {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ScreenOneForOne()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => PositionedTransitionExampleApp()));
     });
   }
 
