@@ -47,7 +47,10 @@ class ChoiceScreen extends StatelessWidget {
                                 idActivateScreen: index,
                                 activateScreen: list_screens[index])));
                   },
-                  child: const Icon(Icons.start)),
+                  child: const Icon(
+                    Icons.start,
+                    color: Colors.black,
+                  )),
             ),
           ),
         ),

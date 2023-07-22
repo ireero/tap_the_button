@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tap_the_button/models/button_timer.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen(
@@ -11,7 +12,7 @@ class HomeScreen extends StatefulWidget {
   Widget activateScreen;
 
   List<String> listOfTips = [
-    'I go where the blue goes...',
+    'Tutorial, just go and you will find the route',
     'I go where the orange goes...'
   ];
 
@@ -32,34 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
         actions: [
-          IconButton(
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    builder: (ctx) => AlertDialog(
-                          title: Text(
-                            'Tip of the level :)',
-                            style: GoogleFonts.laila(),
-                          ),
-                          content: const Text(
-                              'This is the tutorial, Just look and go'),
-                          actions: [
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.deepOrange,
-                              ),
-                              onPressed: () {
-                                Navigator.of(ctx).pop();
-                              },
-                              child: const Text(
-                                'OKAY',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        ));
-              },
-              icon: const Icon(Icons.tips_and_updates)),
           const SizedBox(
             width: 48,
           ),
@@ -91,52 +64,52 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'TAP THE BUTTON!!!',
-              style: GoogleFonts.knewave(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 32,
-            ),
             Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                gradient: LinearGradient(colors: [
-                  Color.fromRGBO(241, 91, 3, 1),
-                  Color.fromRGBO(236, 56, 2, 1),
-                ], begin: Alignment.centerLeft, end: Alignment.centerRight),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => widget.activateScreen,
-                      ));
-                },
-                child: const Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Icon(
-                    Icons.access_alarms,
-                    color: Colors.white,
-                    size: 80,
-                  ),
+              padding: const EdgeInsets.all(12.0),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Phase: ${widget.idActivateScreen}',
+                style: const TextStyle(
+                  fontSize: 32,
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text(
+                'Timer -> Click on the timer in the top right in screen for see the time limit to complete the phase.\nTip: ${widget.listOfTips[widget.idActivateScreen]}',
+                style:
+                    const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
             ),
-            Text('${widget.time != 4 ? widget.time : ''}',
-                style: GoogleFonts.knewave(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
-                ))
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'TAP THE BUTTON!!!',
+                  style: GoogleFonts.knewave(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                ButtonTimer(
+                  activateScreen: widget.activateScreen,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text('${widget.time != 4 ? widget.time : ''}',
+                    style: GoogleFonts.knewave(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                    ))
+              ],
+            ),
           ],
         ),
       ),

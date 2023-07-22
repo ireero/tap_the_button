@@ -13,32 +13,94 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  List<TextStyle> lista_cores = [
-    const TextStyle(color: Colors.blue, fontSize: 48),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue),
-    const TextStyle(color: Colors.blue)
+  List<Text> lista_texts = [
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange, fontSize: 48),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    ),
+    const Text(
+      'Here!',
+      style: TextStyle(color: Colors.deepOrange),
+    )
   ];
 
   void mudaCor(int num) {
     setState(() {
-      lista_cores[num] = const TextStyle(color: Colors.red);
+      lista_texts[num] = const Text('No!',
+          style: TextStyle(
+              color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20));
     });
   }
 
@@ -47,195 +109,146 @@ class _FirstScreenState extends State<FirstScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => PositionedTransitionExampleApp()));
+              builder: (context) => const PositionedTransitionExampleApp()));
     });
   }
 
   @override
   Widget build(context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                  onPressed: proximaTela,
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[0],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(1);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[1],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(2);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[2],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(3);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[3],
-                  )),
-            ],
-          ),
-          TextButton(
-              onPressed: () {
-                mudaCor(4);
-              },
-              child: Text(
-                'Here!',
-                style: lista_cores[4],
-              )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                  onPressed: () {
-                    mudaCor(5);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[5],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(6);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[6],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(7);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[7],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(8);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[8],
-                  )),
-            ],
-          ),
-          TextButton(
-              onPressed: () {
-                mudaCor(9);
-              },
-              child: Text(
-                'Here!',
-                style: lista_cores[9],
-              )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                  onPressed: () {
-                    mudaCor(10);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[10],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(11);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[11],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(12);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[12],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(13);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[13],
-                  )),
-            ],
-          ),
-          TextButton(
-              onPressed: () {
-                mudaCor(14);
-              },
-              child: Text(
-                'Here!',
-                style: lista_cores[14],
-              )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                  onPressed: () {
-                    mudaCor(15);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[15],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(16);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[16],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(17);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[17],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    mudaCor(18);
-                  },
-                  child: Text(
-                    'Here!',
-                    style: lista_cores[18],
-                  )),
-            ],
-          ),
-          TextButton(
-              onPressed: () {
-                mudaCor(19);
-              },
-              child: Text(
-                'Here!',
-                style: lista_cores[19],
-              )),
-        ],
+      appBar: AppBar(
+        backgroundColor: Colors.deepOrange,
+        leading: const BackButton(
+          color: Colors.black,
+        ),
+        title: const Text(
+          'Return?',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(onPressed: proximaTela, child: lista_texts[0]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(1);
+                    },
+                    child: lista_texts[1]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(2);
+                    },
+                    child: lista_texts[2]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(3);
+                    },
+                    child: lista_texts[3]),
+              ],
+            ),
+            TextButton(
+                onPressed: () {
+                  mudaCor(4);
+                },
+                child: lista_texts[4]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                    onPressed: () {
+                      mudaCor(5);
+                    },
+                    child: lista_texts[5]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(6);
+                    },
+                    child: lista_texts[6]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(7);
+                    },
+                    child: lista_texts[7]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(8);
+                    },
+                    child: lista_texts[8]),
+              ],
+            ),
+            TextButton(
+                onPressed: () {
+                  mudaCor(9);
+                },
+                child: lista_texts[9]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                    onPressed: () {
+                      mudaCor(10);
+                    },
+                    child: lista_texts[10]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(11);
+                    },
+                    child: lista_texts[11]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(12);
+                    },
+                    child: lista_texts[12]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(13);
+                    },
+                    child: lista_texts[13]),
+              ],
+            ),
+            TextButton(
+                onPressed: () {
+                  mudaCor(14);
+                },
+                child: lista_texts[14]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                    onPressed: () {
+                      mudaCor(15);
+                    },
+                    child: lista_texts[15]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(16);
+                    },
+                    child: lista_texts[16]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(17);
+                    },
+                    child: lista_texts[17]),
+                TextButton(
+                    onPressed: () {
+                      mudaCor(18);
+                    },
+                    child: lista_texts[18]),
+              ],
+            ),
+            TextButton(
+                onPressed: () {
+                  mudaCor(19);
+                },
+                child: lista_texts[19]),
+          ],
+        ),
       ),
     );
   }

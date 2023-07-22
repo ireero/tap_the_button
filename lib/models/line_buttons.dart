@@ -34,16 +34,17 @@ class _LineButtonState extends State<LineButton> {
     for (int i = 0; i < widget.qtdButtons; i++) {
       lista_ativos.add(false);
       lista_btns.add(ElevatedButton(
-        child: const Text(
-          'Teste',
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
         onPressed: () {
           changeColor(i);
         },
         style: ElevatedButton.styleFrom(
+          elevation: 6,
           padding: const EdgeInsets.all(16),
           backgroundColor: lista_ativos[i] == false ? Colors.red : Colors.green,
+        ),
+        child: const Text(
+          'Here!',
+          style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ));
     }

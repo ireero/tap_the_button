@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tap_the_button/screens/phases/phase1_screen.dart';
 import 'phase1.2.dart';
 
 /// Flutter code sample for [PositionedTransition].
@@ -47,50 +48,52 @@ class _PositionedTransitionExampleState
     const double smallLogo = 100;
     const double bigLogo = 200;
 
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        final Size biggest = constraints.biggest;
-        return Stack(
-          children: <Widget>[
-            PositionedTransition(
-              rect: RelativeRectTween(
-                begin: RelativeRect.fromSize(
-                  const Rect.fromLTWH(0, 0, 2, 2),
-                  biggest,
-                ),
-                end: RelativeRect.fromSize(
-                  Rect.fromLTWH(biggest.width - bigLogo,
-                      biggest.height - bigLogo, bigLogo, bigLogo),
-                  biggest,
-                ),
-              ).animate(CurvedAnimation(
-                parent: _controller,
-                curve: Curves.elasticInOut,
-              )),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      elevation: 4,
-                      backgroundColor: Colors.deepOrange,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => FirstOneOfOne()));
-                    },
-                    child: Text(
-                      'Here!',
-                      style: GoogleFonts.knewave(
-                        fontSize: 30,
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          final Size biggest = constraints.biggest;
+          return Stack(
+            children: <Widget>[
+              PositionedTransition(
+                rect: RelativeRectTween(
+                  begin: RelativeRect.fromSize(
+                    const Rect.fromLTWH(0, 0, 2, 2),
+                    biggest,
+                  ),
+                  end: RelativeRect.fromSize(
+                    Rect.fromLTWH(biggest.width - bigLogo,
+                        biggest.height - bigLogo, bigLogo, bigLogo),
+                    biggest,
+                  ),
+                ).animate(CurvedAnimation(
+                  parent: _controller,
+                  curve: Curves.elasticInOut,
+                )),
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 4,
+                        backgroundColor: Colors.deepOrange,
                       ),
-                    )),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FirstOneOfOne()));
+                      },
+                      child: Text(
+                        'Here!',
+                        style: GoogleFonts.knewave(
+                          fontSize: 30,
+                        ),
+                      )),
+                ),
               ),
-            ),
-          ],
-        );
-      },
+            ],
+          );
+        },
+      ),
     );
   }
 }
