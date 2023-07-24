@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tap_the_button/models/phase.dart';
+import 'package:tap_the_button/models/phase_control.dart';
 import 'package:tap_the_button/screens/home_screen.dart';
 import 'package:tap_the_button/screens/phases/phase1_screen.dart';
 import 'package:tap_the_button/screens/phases/phase2_screen.dart';
@@ -8,10 +9,9 @@ import 'package:google_fonts/google_fonts.dart';
 class ChoiceScreen extends StatelessWidget {
   ChoiceScreen({super.key});
 
-  List<Widget> list_screens = [FirstScreen(), SecondScreen()];
-
   @override
   Widget build(context) {
+    Phase().createClassPhases();
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -45,7 +45,8 @@ class ChoiceScreen extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => HomeScreen(
                                 idActivateScreen: index,
-                                activateScreen: list_screens[index])));
+                                activateScreen:
+                                    PhaseControl().list_screens[index])));
                   },
                   child: const Icon(
                     Icons.start,
@@ -54,7 +55,7 @@ class ChoiceScreen extends StatelessWidget {
             ),
           ),
         ),
-        itemCount: list_screens.length,
+        itemCount: PhaseControl().list_screens.length,
       ),
     );
   }

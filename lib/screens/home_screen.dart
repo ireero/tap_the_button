@@ -1,6 +1,8 @@
+import 'package:counter/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tap_the_button/models/button_timer.dart';
+import 'dart:async';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen(
@@ -16,7 +18,7 @@ class HomeScreen extends StatefulWidget {
     'I go where the orange goes...'
   ];
 
-  double time = 4.0;
+  List<double> listOfTimes = [60.0, 58.0];
 
   @override
   State<HomeScreen> createState() {
@@ -25,8 +27,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void sleep(Duration duration) {}
-
   @override
   Widget build(context) {
     return Scaffold(
@@ -42,7 +42,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   context: context,
                   builder: (ctx) => AlertDialog(
                     title: Text('Time', style: GoogleFonts.laila()),
-                    content: const Text('Time limit to clyde the phase'),
+                    content: Text(
+                      'Time limit to clyde the phase:\n ${widget.listOfTimes[widget.idActivateScreen]} seconds',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
                     actions: [
                       TextButton(
                           style: TextButton.styleFrom(
@@ -65,13 +71,13 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: [ 
             Container(
               padding: const EdgeInsets.all(12.0),
               alignment: Alignment.centerLeft,
               child: Text(
-                'Phase: ${widget.idActivateScreen}',
-                style: const TextStyle(
+                'Phase: ${widget.idActivateScreen + 1}',
+                style: GoogleFonts.laila(
                   fontSize: 32,
                 ),
               ),
@@ -80,8 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(12.0),
               child: Text(
                 'Timer -> Click on the timer in the top right in screen for see the time limit to complete the phase.\nTip: ${widget.listOfTips[widget.idActivateScreen]}',
-                style:
-                    const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                style: GoogleFonts.laila(
+                    fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ),
             Column(
@@ -103,11 +109,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                Text('${widget.time != 4 ? widget.time : ''}',
-                    style: GoogleFonts.knewave(
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold,
-                    ))
               ],
             ),
           ],

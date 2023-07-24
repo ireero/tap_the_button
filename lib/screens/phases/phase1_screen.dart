@@ -116,16 +116,6 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
-        leading: const BackButton(
-          color: Colors.black,
-        ),
-        title: const Text(
-          'Return?',
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
       body: Container(
         color: Colors.white,
         child: Column(

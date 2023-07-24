@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tap_the_button/screens/phases/end_phase/end_phase_01.dart';
 
 class LineButton extends StatefulWidget {
-  const LineButton({required this.qtdButtons, super.key});
+  LineButton({required this.qtdButtons, super.key});
 
   final int qtdButtons;
+  int qtdBtnsClicados = 0;
 
   @override
   State<LineButton> createState() {
@@ -29,6 +31,17 @@ class _LineButtonState extends State<LineButton> {
     super.initState();
   }
 
+  void addEVerifica() {
+    widget.qtdBtnsClicados++;
+    if (widget.qtdBtnsClicados >= 5) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const EndPhaseOne(),
+          ));
+    }
+  }
+
   void criaBtns() {
     lista_btns = [];
     for (int i = 0; i < widget.qtdButtons; i++) {
@@ -36,15 +49,16 @@ class _LineButtonState extends State<LineButton> {
       lista_btns.add(ElevatedButton(
         onPressed: () {
           changeColor(i);
+          addEVerifica();
         },
         style: ElevatedButton.styleFrom(
           elevation: 6,
           padding: const EdgeInsets.all(16),
           backgroundColor: lista_ativos[i] == false ? Colors.red : Colors.green,
         ),
-        child: const Text(
-          'Here!',
-          style: TextStyle(color: Colors.white, fontSize: 18),
+        child: Text(
+          lista_ativos[i] == false ? 'Here!' : ':)',
+          style: const TextStyle(color: Colors.white, fontSize: 18),
         ),
       ));
     }
