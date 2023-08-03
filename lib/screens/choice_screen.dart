@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:tap_the_button/models/phase.dart';
 import 'package:tap_the_button/models/phase_control.dart';
+import 'package:tap_the_button/models/title_text_choice_phase.dart';
 import 'package:tap_the_button/screens/home_screen.dart';
-import 'package:tap_the_button/screens/phases/phase1_screen.dart';
-import 'package:tap_the_button/screens/phases/phase2_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChoiceScreen extends StatelessWidget {
-  ChoiceScreen({super.key});
+class ChoiceScreen extends StatefulWidget {
+  const ChoiceScreen({super.key});
 
   @override
+  State<ChoiceScreen> createState() {
+    // TODO: implement createState
+    return _ChoiceScreenState();
+  }
+}
+
+class _ChoiceScreenState extends State<ChoiceScreen> {
   Widget build(context) {
-    Phase().createClassPhases();
     return Scaffold(
       appBar: AppBar(
         title: Center(
           child: Text(
             'Phases',
-            style: GoogleFonts.knewave(fontSize: 32),
+            style: GoogleFonts.knewave(fontSize: 32, color: Colors.black),
           ),
         ),
         backgroundColor: Colors.deepOrange,
@@ -25,19 +29,15 @@ class ChoiceScreen extends StatelessWidget {
       body: ListView.builder(
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) => Card(
-          elevation: 6,
+          color: Colors.deepOrange,
+          elevation: 3,
           child: Padding(
-            padding: const EdgeInsets.all(9.0),
+            padding: const EdgeInsets.all(12.0),
             child: ListTile(
-              leading: Text(
-                '${index + 1}',
-                style: GoogleFonts.knewave(
-                  fontSize: 30,
-                ),
-              ),
+              leading: TextChoicePhase(index: index),
               trailing: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepOrange,
+                    backgroundColor: Colors.white,
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -46,7 +46,7 @@ class ChoiceScreen extends StatelessWidget {
                             builder: (context) => HomeScreen(
                                 idActivateScreen: index,
                                 activateScreen:
-                                    PhaseControl().list_screens[index])));
+                                    PhaseControl().listScreens[index])));
                   },
                   child: const Icon(
                     Icons.start,
@@ -55,7 +55,7 @@ class ChoiceScreen extends StatelessWidget {
             ),
           ),
         ),
-        itemCount: PhaseControl().list_screens.length,
+        itemCount: PhaseControl().listScreens.length,
       ),
     );
   }

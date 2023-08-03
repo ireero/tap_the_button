@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+// ignore: must_be_immutable
 class ButtonTimer extends StatefulWidget {
   ButtonTimer({required this.activateScreen, super.key});
 
@@ -18,22 +19,24 @@ class _ButtonTimerState extends State<ButtonTimer> {
   bool initiatCount = false;
 
   void _startCountDonw() {
-    Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        initiatCount = true;
-        timeLeft--;
-        if (timeLeft <= 0) {
-          if (timeLeft <= -1) {
-            timer.cancel();
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => widget.activateScreen,
-                ));
+    if (initiatCount == false) {
+      Timer.periodic(const Duration(seconds: 1), (timer) {
+        setState(() {
+          initiatCount = true;
+          timeLeft--;
+          if (timeLeft <= 0) {
+            if (timeLeft <= -1) {
+              timer.cancel();
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => widget.activateScreen,
+                  ));
+            }
           }
-        }
+        });
       });
-    });
+    }
   }
 
   @override

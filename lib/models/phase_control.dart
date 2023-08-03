@@ -4,6 +4,6 @@ import 'package:tap_the_button/screens/phases/phase1_screen.dart';
 import 'package:tap_the_button/screens/phases/phase2_screen.dart';
 
 class PhaseControl {
-  List<Widget> list_screens = [FirstScreen(), const SecondScreen()];
-  List<Phase> list_phases = [];
+  List<Widget> listScreens = [const FirstScreen(), const SecondScreen()];
+  List<int> listPhases = [];
 }

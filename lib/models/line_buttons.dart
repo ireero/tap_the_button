@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tap_the_button/screens/phases/end_phase/end_phase_01.dart';
+import 'package:tap_the_button/screens/phases/end_phase/end_phase.dart';
 
+// ignore: must_be_immutable
 class LineButton extends StatefulWidget {
   LineButton({required this.qtdButtons, super.key});
 
@@ -14,8 +15,10 @@ class LineButton extends StatefulWidget {
 }
 
 class _LineButtonState extends State<LineButton> {
+  // ignore: non_constant_identifier_names
   List<ElevatedButton> lista_btns = [];
 
+  // ignore: non_constant_identifier_names
   List<bool> lista_ativos = [];
 
   void changeColor(int n) {
@@ -26,7 +29,6 @@ class _LineButtonState extends State<LineButton> {
 
   @override
   void initState() {
-    // TODO: implement initState
     criaBtns();
     super.initState();
   }
@@ -37,7 +39,9 @@ class _LineButtonState extends State<LineButton> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const EndPhaseOne(),
+            builder: (context) => EndPhaseOne(
+              idFase: 1,
+            ),
           ));
     }
   }

@@ -1,9 +1,8 @@
-import 'package:counter/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tap_the_button/models/button_timer.dart';
-import 'dart:async';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
   HomeScreen(
       {required this.idActivateScreen,
@@ -31,12 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const BackButton(color: Colors.black),
         backgroundColor: Colors.deepOrange,
         actions: [
           const SizedBox(
             width: 48,
           ),
           IconButton(
+              color: Colors.black,
               onPressed: () {
                 showDialog(
                   context: context,
@@ -71,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [ 
+          children: [
             Container(
               padding: const EdgeInsets.all(12.0),
               alignment: Alignment.centerLeft,

@@ -1,10 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'phase1.1_screen.dart';
 
 class FirstScreen extends StatefulWidget {
-  FirstScreen({super.key});
+  const FirstScreen({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -13,6 +11,7 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
+  // ignore: non_constant_identifier_names
   List<Text> lista_texts = [
     const Text(
       'Here!',

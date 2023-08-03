@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tap_the_button/screens/phases/phase1_screen.dart';
 import 'phase1.2.dart';
 
 /// Flutter code sample for [PositionedTransition].
@@ -45,7 +44,6 @@ class _PositionedTransitionExampleState
 
   @override
   Widget build(BuildContext context) {
-    const double smallLogo = 100;
     const double bigLogo = 200;
 
     return Scaffold(
