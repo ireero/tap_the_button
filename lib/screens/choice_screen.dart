@@ -15,6 +15,12 @@ class ChoiceScreen extends StatefulWidget {
 }
 
 class _ChoiceScreenState extends State<ChoiceScreen> {
+  List<List<int>> list_scapes_phases = [
+    [1, 1, 1],
+    [1, 2, 1],
+    [2, 1, 2]
+  ];
+
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
@@ -34,6 +40,18 @@ class _ChoiceScreenState extends State<ChoiceScreen> {
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: ListTile(
+              subtitle: Center(
+                child: Text(
+                  '${list_scapes_phases[index]}'
+                      .replaceAll('[', '')
+                      .replaceAll(']', '')
+                      .replaceAll(',', ' - '),
+                  style: GoogleFonts.laila(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
               leading: TextChoicePhase(index: index),
               trailing: ElevatedButton(
                   style: ElevatedButton.styleFrom(
