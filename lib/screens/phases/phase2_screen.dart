@@ -107,7 +107,7 @@ class _SecondScreenState extends State<SecondScreen> {
 }
 
 class SwitchControl extends StatefulWidget {
-  SwitchControl({
+  const SwitchControl({
     required this.index,
     required this.listaSwitchLigado,
     required this.adicionaValor,
