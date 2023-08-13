@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tap_the_button/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,7 +26,10 @@ class EndPhaseOne extends StatelessWidget {
               salvarFaseFinalizada();
               RestartWidget.restartApp(context);
             },
-            child: const Text('End')),
+            child: Text(
+              'End',
+              style: GoogleFonts.laila(color: Colors.white),
+            )),
       ),
     );
   }

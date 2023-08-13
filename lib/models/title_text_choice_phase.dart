@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'phase_control.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class TextChoicePhase extends StatefulWidget {
   TextChoicePhase({required this.index, super.key});
 
@@ -9,7 +9,6 @@ class TextChoicePhase extends StatefulWidget {
 
   @override
   State<TextChoicePhase> createState() {
-    // TODO: implement createState
     return _TextChoicePhaseState();
   }
 }

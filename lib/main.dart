@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tap_the_button/models/phase.dart';
-import 'package:tap_the_button/screens/choice_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tap_the_button/screens/menu_screen.dart';
 import 'models/phase_control.dart';
 
 var kColorScheme = ColorScheme.fromSeed(seedColor: Colors.deepOrange);
@@ -15,7 +14,7 @@ void main() {
         cardTheme: const CardTheme().copyWith(),
       ),
       debugShowCheckedModeBanner: false,
-      home: const ChoiceScreen(),
+      home: const MenuScreen(),
     ),
   ));
 }

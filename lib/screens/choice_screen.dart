@@ -9,21 +9,23 @@ class ChoiceScreen extends StatefulWidget {
 
   @override
   State<ChoiceScreen> createState() {
-    // TODO: implement createState
     return _ChoiceScreenState();
   }
 }
 
 class _ChoiceScreenState extends State<ChoiceScreen> {
+  // ignore: non_constant_identifier_names
   List<List<int>> list_scapes_phases = [
     [1, 1, 1],
     [1, 2, 1],
     [2, 1, 2]
   ];
 
+  @override
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(
           child: Text(
             'Phases',

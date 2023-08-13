@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tap_the_button/screens/phases/phase2.2.1.dart';
+import 'package:tap_the_button/screens/phases/phase2.2.2.dart';
 
 class PhaseTwoPOne extends StatelessWidget {
   const PhaseTwoPOne({super.key});
@@ -19,7 +21,13 @@ class PhaseTwoPOne extends StatelessWidget {
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.yellow),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PhaseTwoTwoOne(),
+                            ));
+                      },
                       child: Text(
                         'Here!',
                         style: GoogleFonts.laila(
@@ -40,7 +48,13 @@ class PhaseTwoPOne extends StatelessWidget {
                   ElevatedButton(
                       style:
                           ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PhaseTwoTwoTwo(),
+                            ));
+                      },
                       child: Text(
                         'Here!',
                         style: GoogleFonts.laila(
