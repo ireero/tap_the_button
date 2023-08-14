@@ -18,7 +18,7 @@ class _ChoiceScreenState extends State<ChoiceScreen> {
   List<List<int>> list_scapes_phases = [
     [1, 1, 1],
     [1, 2, 1],
-    [2, 1, 2]
+    [1, 1, 2]
   ];
 
   @override

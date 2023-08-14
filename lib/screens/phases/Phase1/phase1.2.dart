@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../models/line_buttons.dart';
+import '../../../models/line_buttons.dart';
 
 class FirstOneOfOne extends StatefulWidget {
   const FirstOneOfOne({super.key});

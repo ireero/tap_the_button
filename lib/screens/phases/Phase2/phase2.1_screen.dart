@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tap_the_button/screens/phases/phase2.2.1.dart';
-import 'package:tap_the_button/screens/phases/phase2.2.2.dart';
+import 'package:tap_the_button/screens/phases/Phase2/phase2.2.1.dart';
+import 'package:tap_the_button/screens/phases/Phase2/phase2.2.2.dart';
 
 class PhaseTwoPOne extends StatelessWidget {
   const PhaseTwoPOne({super.key});

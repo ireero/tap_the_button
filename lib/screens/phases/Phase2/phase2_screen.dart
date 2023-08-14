@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tap_the_button/screens/phases/phase2.1_screen.dart';
+import 'package:tap_the_button/screens/phases/Phase2/phase2.1_screen.dart';
 
 class SecondScreen extends StatefulWidget {
   SecondScreen({Key? key}) : super(key: key);

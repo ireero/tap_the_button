@@ -14,10 +14,11 @@ class HomeScreen extends StatefulWidget {
 
   List<String> listOfTips = [
     'Tutorial, just go and you will find the route',
-    'I go where the orange goes...'
+    'I go where the orange goes...',
+    'The secret is the key'
   ];
 
-  List<double> listOfTimes = [60.0, 58.0];
+  List<double> listOfTimes = [60.0, 58.0, 50.0];
 
   @override
   State<HomeScreen> createState() {
