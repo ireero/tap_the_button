@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tap_the_button/models/timer_phases.dart';
 import 'phase1.1_screen.dart';
+import 'dart:async';
 
 class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
@@ -115,6 +117,13 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: TimerPhase(
+          temp_inicial: 60,
+          status_inicial: false,
+        ),
+      ),
       body: Container(
         color: Colors.white,
         child: Column(
